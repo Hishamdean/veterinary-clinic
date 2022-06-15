@@ -25,7 +25,6 @@ const MainContainer: React.FC = () => {
       location: location === "all" ? null : location,
     }).then(
       (res) => {
-        console.log(location);
         setResults(res.results);
       },
       (error: AxiosError) => {
@@ -81,8 +80,9 @@ const MainContainer: React.FC = () => {
       areas.push(item.area);
     });
     areas.push("all");
+  
     const filteredAreas = Array.from(new Set(areas));
-    console.log('filteredAreas', filteredAreas);
+
     return (
       <Select
         defaultValue={location}
