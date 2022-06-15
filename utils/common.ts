@@ -29,4 +29,8 @@ const handleSearch = (items: any, value: string) => {
   return searchResults;
 };
 
-export { handleFilter, handleSearch };
+const capatalize = (value: string) => {
+  return value && value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+export { handleFilter, handleSearch, capatalize };

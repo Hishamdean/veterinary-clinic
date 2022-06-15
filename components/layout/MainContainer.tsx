@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import { Layout, Typography, Input, Row, Col, Select, Button } from "antd";
-import { useVetList } from "../../hooks/useVetList";
+import { Layout, Typography, Input, Row, Col, Select } from "antd";
+import { AxiosError } from "axios";
 import CardContainer from "../CardContainer";
+import { useVetList } from "../../hooks/useVetList";
 import { Clinic } from "../../lib/types";
 import * as ClinicAPI from "../../services/index";
-import useDebounce from "../../hooks/useDebounce";
-import { AxiosError } from "axios";
+import { capatalize } from "../../utils/common";
 
 const { Text } = Typography;
 const { Search } = Input;
 const { Option } = Select;
-const ALL = "All";
 
 const MainContainer: React.FC = () => {
   const items = useVetList() as Clinic[];
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [location, setLocation] = useState<string>("all");
   const [results, setResults] = useState<[]>([]);
-  const debounceSearchTerm = useDebounce(searchTerm, 500);
 
   const handleSearch = (searchTerm: string, location: string) => {
-    ClinicAPI.post(`search`, {
+    ClinicAPI.post('search', {
       searchTerm: searchTerm === "" ? null : searchTerm,
       location: location === "all" ? null : location,
     }).then(
@@ -75,17 +73,17 @@ const MainContainer: React.FC = () => {
 
   const RenderLocations = () => {
     let areas: string[] = [];
+    areas.push("all");
 
     items.map((item: Clinic) => {
       areas.push(item.area);
     });
-    areas.push("all");
-  
-    const filteredAreas = Array.from(new Set(areas));
+
+    const filteredAreas: string[] = Array.from(new Set(areas));
 
     return (
       <Select
-        defaultValue={location}
+        defaultValue={capatalize(location)}
         onSelect={(e: string) => {
           setLocation(e);
           handleSearch(searchTerm, e);
