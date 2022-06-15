@@ -68,7 +68,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
         <Meta
           description={
             <>
-              <div>
+              <div style={{ marginBottom: 10 }}>
                 {area}
               </div>
               <div>
@@ -87,6 +87,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
       <Card
         hoverable
         cover={<img src={imgUrl} />}
+        bodyStyle={{ padding: 10 }}
         style={{ width: 350, background: "#ecebec" }}
         bordered
         actions={[

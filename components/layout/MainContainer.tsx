@@ -106,7 +106,7 @@ const MainContainer: React.FC = () => {
     <Layout.Content>
       <Row justify="space-between">
         <Search
-          style={{ margin: 15, width: "70%" }}
+          style={{ margin: 15, width: "80%" }}
           placeholder="Search for listings..."
           onSearch={(e: string) => {
             handleSearch(e, location);
@@ -118,7 +118,7 @@ const MainContainer: React.FC = () => {
         />
         <RenderLocations />
       </Row>
-      <Row>
+      <Row justify="space-between">
         {results.length === 0 ? <RenderDefaultList /> : <RenderSearchResult />}
       </Row>
     </Layout.Content>
