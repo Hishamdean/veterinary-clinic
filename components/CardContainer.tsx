@@ -69,7 +69,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
           description={
             <>
               <div>
-                <Text>{area}</Text>
+                {area}
               </div>
               <div>
                 <PhoneOutlined style={{ fontSize: 16 }} /> {contact}
@@ -87,7 +87,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
       <Card
         hoverable
         cover={<img src={imgUrl} />}
-        style={{ width: 350, background: "#ecebec", padding: 0 }}
+        style={{ width: 350, background: "#ecebec" }}
         bordered
         actions={[
           <Popover content={<RenderServices />}>

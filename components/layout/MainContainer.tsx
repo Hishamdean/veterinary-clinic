@@ -18,7 +18,7 @@ const MainContainer: React.FC = () => {
   const [results, setResults] = useState<[]>([]);
 
   const handleSearch = (searchTerm: string, location: string) => {
-    ClinicAPI.post('search', {
+    ClinicAPI.post("search", {
       searchTerm: searchTerm === "" ? null : searchTerm,
       location: location === "all" ? null : location,
     }).then(
@@ -104,25 +104,23 @@ const MainContainer: React.FC = () => {
 
   return (
     <Layout.Content>
-      <Row justify="space-around">
-        <Col span={20}>
-          <Search
-            style={{ margin: 15 }}
-            placeholder="Search here..."
-            onSearch={(e: string) => {
-              handleSearch(e, location);
-            }}
-            onChange={(e: any) => {
-              setSearchTerm(e.target.value);
-            }}
-            allowClear
-          />
-        </Col>
-        <Col span={4}>
-          <RenderLocations />
-        </Col>
+      <Row justify="space-between">
+        <Search
+          style={{ margin: 15, width: "70%" }}
+          placeholder="Search for listings..."
+          onSearch={(e: string) => {
+            handleSearch(e, location);
+          }}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setSearchTerm(e.target.value);
+          }}
+          allowClear
+        />
+        <RenderLocations />
       </Row>
-      {results.length === 0 ? <RenderDefaultList /> : <RenderSearchResult />}
+      <Row>
+        {results.length === 0 ? <RenderDefaultList /> : <RenderSearchResult />}
+      </Row>
     </Layout.Content>
   );
 };
