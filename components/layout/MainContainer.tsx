@@ -95,7 +95,7 @@ const MainContainer: React.FC = () => {
       >
         {filteredAreas.map((area: string, index: number) => (
           <Option value={area} key={index}>
-            {area}
+            {capatalize(area)}
           </Option>
         ))}
       </Select>
