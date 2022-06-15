@@ -14,13 +14,13 @@ export default async function handler(
 ) {
   try {
     const { searchTerm, location } = req.body;
-    let response: any = [];
+    let response: Clinic[] = [];
     if (location && !searchTerm) {
       response = await prisma.clinic.findMany({
         where: {
           area: {
             contains: location,
-            mode: "insensitive"
+            mode: "insensitive",
           },
         },
       });
@@ -33,26 +33,26 @@ export default async function handler(
             {
               area: {
                 contains: location ? location : searchTerm,
-                mode: "insensitive"
+                mode: "insensitive",
               },
             },
             {
               name: {
                 contains: searchTerm,
-                mode: "insensitive"
+                mode: "insensitive",
               },
             },
             {
               address: {
                 contains: searchTerm,
-                mode: "insensitive"
+                mode: "insensitive",
               },
             },
           ],
         },
       });
     }
-
+    console.log("response", response);
     res.status(200).json({ results: response, message: "search api success" });
   } catch (error) {
     res.status(500).json({ results: [], message: "search api failed" });

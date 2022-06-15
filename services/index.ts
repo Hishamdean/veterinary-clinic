@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 export const get = (path: string, opts = {}) => {
   opts = Object.assign({}, opts, {
@@ -29,7 +29,7 @@ const request = async (path: string, opts = {}) => {
 
   return axios(options)
     .then(handleResponse)
-    .catch((e: any) => {
+    .catch((e: AxiosError) => {
       throw handleError(e);
     });
 };
@@ -39,7 +39,7 @@ const handleError = (error: any) => {
   return errs;
 };
 
-const handleResponse = (response: any) => {
+const handleResponse = (response: AxiosResponse) => {
   const { status, data } = response;
 
   if (status < 200 && status > 200) {

@@ -23,13 +23,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <div>
       <Layout.Header style={{ background: "#ff7420" }}>
-        <Row>
-          <Col span={21}>
+        <Row justify="space-between">
             <Text style={{ color: "white", fontSize: 24 }} strong>
               {title}
             </Text>
-          </Col>
-          <Col span={3}>
             <Text>
               <Button
                 style={{
@@ -43,7 +40,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 Add veterinary clinics
               </Button>
             </Text>
-          </Col>
         </Row>
       </Layout.Header>
     </div>
