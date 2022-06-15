@@ -52,7 +52,7 @@ export default async function handler(
         },
       });
     }
-    console.log("response", response);
+  
     res.status(200).json({ results: response, message: "search api success" });
   } catch (error) {
     res.status(500).json({ results: [], message: "search api failed" });
