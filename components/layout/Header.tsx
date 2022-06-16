@@ -22,24 +22,24 @@ const handleClick = () => {
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <div>
-      <Layout.Header style={{ background: "#ff7420" }}>
-        <Row justify="space-between">
-            <Text style={{ color: "white", fontSize: 24 }} strong>
-              {title}
-            </Text>
-            <Text>
-              <Button
-                style={{
-                  background: "white",
-                  color: "#ff7420",
-                  borderRadius: 20,
-                  fontWeight: "bold",
-                }}
-                onClick={() => handleClick()}
-              >
-                Add veterinary clinics
-              </Button>
-            </Text>
+      <Layout.Header style={{ background: "#ff7420", height: 80 }}>
+        <Row justify="space-between" align="middle" style={{ paddingTop: 10 }}>
+          <Text style={{ color: "white", fontSize: 24 }} strong>
+            {title}
+          </Text>
+          <Text>
+            <Button
+              style={{
+                background: "white",
+                color: "#ff7420",
+                borderRadius: 20,
+                fontWeight: "bold",
+              }}
+              onClick={() => handleClick()}
+            >
+              Add veterinary clinics
+            </Button>
+          </Text>
         </Row>
       </Layout.Header>
     </div>

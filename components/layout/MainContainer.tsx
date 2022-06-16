@@ -118,8 +118,14 @@ const MainContainer: React.FC = () => {
         />
         <RenderLocations />
       </Row>
-      <Row justify="space-between">
-        {results.length === 0 ? <RenderDefaultList /> : <RenderSearchResult />}
+      <Row justify="space-evenly">
+        <div>
+          {results.length === 0 ? (
+            <RenderDefaultList />
+          ) : (
+            <RenderSearchResult />
+          )}
+        </div>
       </Row>
     </Layout.Content>
   );

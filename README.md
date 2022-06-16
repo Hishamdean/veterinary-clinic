@@ -2,35 +2,50 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, you will need to run this command to install all the dependencies:
+
+```bash
+npm install
+```
+
+Then to run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Setting up Postgresql
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Go to the [Progresql website](https://www.postgresql.org/download/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Setting up prisma
 
-## Learn More
+You will need to install Prisma CLI:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install @prisma/cli --save-dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The data model/schema has aleady been added so, to create a new SQL migration, run the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npx prisma migrate dev --name "init" --preview-feature
+```
 
-## Deploy on Vercel
+## Description
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Once all installations are complete and you are running the server.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+There is a button on the top right of the screen that says `Add veterinary clinics`. This button will seed the database that you have set in the .env file.
 
-# veterinary-clinic
+Currently the DATABASE_URL in the .env file is just a sample which is:
+
+```
+DATABASE_URL="postgresql://user:password@localhost:5432/myDb?schema=public"
+```
+
+Just replace `user`, `password` and `myDB` with your local database config.
+
+Once your database config is done, just simply click on the `Add veterinary clinics` to populate your database.
