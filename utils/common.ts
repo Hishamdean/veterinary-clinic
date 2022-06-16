@@ -1,8 +1,10 @@
-const handleFilter = (items: any, e: string) => {
-  const lowerCaseValue = e.toLowerCase();
-  const filteredResults: any = [];
+import { Clinic } from "../lib/types";
 
-  items.filter((item: any) => {
+const handleFilter = (items: Clinic[], e: string) => {
+  const lowerCaseValue = e.toLowerCase();
+  const filteredResults: Clinic[] = [];
+
+  items.filter((item: Clinic) => {
     if (item.area.toLowerCase().includes(lowerCaseValue)) {
       filteredResults.push(item);
     }
@@ -11,11 +13,11 @@ const handleFilter = (items: any, e: string) => {
   return filteredResults;
 };
 
-const handleSearch = (items: any, value: string) => {
+const handleSearch = (items: Clinic[], value: string) => {
   const lowerCaseValue = value.toLowerCase();
-  const searchResults: any = [];
+  const searchResults: Clinic[] = [];
 
-  items.filter((item: any) => {
+  items.filter((item: Clinic) => {
     if (
       item.name.toLowerCase().includes(lowerCaseValue) ||
       item.area.toLowerCase().includes(lowerCaseValue) ||
