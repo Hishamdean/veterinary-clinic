@@ -38,9 +38,9 @@ npx prisma migrate dev --name "init" --preview-feature
 
 Once all installations are complete and you are running the server.
 
-There is a button on the top right of the screen that says `Add veterinary clinics`. This button will seed the database that you have set in the .env file.
+There is a button on the top right of the screen that says `Add veterinary clinics`. This button will seed the database that you have set in the `.env` file.
 
-Currently the DATABASE_URL in the .env file is just a sample which is:
+Currently the `DATABASE_URL` in the `.env` file is just a sample which is:
 
 ```
 DATABASE_URL="postgresql://user:password@localhost:5432/myDb?schema=public"
