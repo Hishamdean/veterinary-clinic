@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Getting Started
+## Getting Started
 
 First, you will need to run this command to install all the dependencies:
 
@@ -16,11 +16,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Setting up Postgresql
+## Setting up Postgresql
 
 Go to the [Progresql website](https://www.postgresql.org/download/)
 
-# Setting up prisma
+## Setting up prisma
 
 You will need to install Prisma CLI:
 
@@ -34,7 +34,7 @@ The data model/schema has aleady been added so, to create a new SQL migration, r
 npx prisma migrate dev --name "init" --preview-feature
 ```
 
-# Description
+## Description
 
 Once all installations are complete and you are running the server.
 
@@ -46,6 +46,6 @@ Currently the DATABASE_URL in the .env file is just a sample which is:
 DATABASE_URL="postgresql://user:password@localhost:5432/myDb?schema=public"
 ```
 
-Just replace user, password and myDB with your local database config.
+Just replace `user`, `password` and `myDB` with your local database config.
 
 Once your database config is done, just simply click on the `Add veterinary clinics` to populate your database.
