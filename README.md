@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Setting up Postgresql
 
-Go to the [Progresql website](https://www.postgresql.org/download/)
+Go to the [Postgresql website](https://www.postgresql.org/download/)
 
 ## Setting up prisma
 
