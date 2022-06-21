@@ -8,14 +8,6 @@ First, you will need to run this command to install all the dependencies:
 npm install
 ```
 
-Then to run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## Setting up Postgresql
 
 Go to the [Postgresql website](https://www.postgresql.org/download/)
@@ -34,7 +26,7 @@ The data model/schema has aleady been added so, to create a new SQL migration, r
 npx prisma migrate dev --name "init" --preview-feature
 ```
 
-## Description
+## Running the service
 
 Once all installations are complete and you are running the server.
 
@@ -47,5 +39,13 @@ DATABASE_URL="postgresql://user:password@localhost:5432/myDb?schema=public"
 ```
 
 Just replace `user`, `password` and `myDB` with your local database config.
+
+Then to run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Once your database config is done, just simply click on the `Add veterinary clinics` to populate your database.
