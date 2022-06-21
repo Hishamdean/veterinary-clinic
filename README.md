@@ -12,7 +12,7 @@ npm install
 
 Go to the [Postgresql website](https://www.postgresql.org/download/)
 
-## Setting up prisma
+## Setting up Prisma
 
 You will need to install Prisma CLI:
 
@@ -26,7 +26,7 @@ The data model/schema has aleady been added so, to create a new SQL migration, r
 npx prisma migrate dev --name "init" --preview-feature
 ```
 
-## Running the service
+## Running the Service
 
 Once all installations are complete and you are running the server.
 
